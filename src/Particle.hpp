@@ -17,6 +17,10 @@ private:
     sf::Vector2f velocity;
     float speed;
     float angle;
+public:
+    void SetMaxSpeed(float maxSpeed);
+
+private:
     float* Pdt;
     float maxSpeed;
 

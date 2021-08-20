@@ -6,9 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/home/caleb/CLionProjects/Particle/src/Particle.cpp
+/home/caleb/CLionProjects/Particle/src/App.cpp
+App.hpp
+/home/caleb/CLionProjects/Particle/src/App.hpp
+
+/home/caleb/CLionProjects/Particle/src/App.hpp
+includes.hpp
+/home/caleb/CLionProjects/Particle/src/includes.hpp
 Particle.hpp
 /home/caleb/CLionProjects/Particle/src/Particle.hpp
+array
+-
+ctime
+-
 
 /home/caleb/CLionProjects/Particle/src/Particle.hpp
 includes.hpp
@@ -25,4 +35,10 @@ SFML/Graphics.hpp
 -
 iostream
 -
+
+/home/caleb/CLionProjects/Particle/src/main.cpp
+iostream
+-
+App.hpp
+/home/caleb/CLionProjects/Particle/src/App.hpp
 

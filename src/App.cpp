@@ -43,6 +43,16 @@ void App::HandleEvents() {
     while(window->pollEvent(event)){
         if(event.type == sf::Event::Closed || event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)
             window->close();
+        else if(event.type == sf::Event::MouseButtonPressed){
+            for(auto & i : particleArray){
+                i->SetMaxSpeed(1250);
+            }
+        }
+        else if(event.type == sf::Event::MouseButtonReleased){
+            for(auto & i : particleArray){
+                i->SetMaxSpeed(10000);
+            }
+        }
     }
 
 }

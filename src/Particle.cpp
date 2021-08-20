@@ -4,7 +4,7 @@
 
 #include "Particle.hpp"
 
-Particle::Particle(sf::Vector2i* MPosition, float* dt) : speed{10000}, maxSpeed{1250}, velocity(0,0), MPos{MPosition}, Pdt{dt}, PI{3.14159}{
+Particle::Particle(sf::Vector2i* MPosition, float* dt) : speed{10000}, maxSpeed{10000}, velocity(0,0), MPos{MPosition}, Pdt{dt}, PI{3.14159}{
 
     vertex.position = sf::Vector2f(rand() % SCREEN.width, rand() % SCREEN.height);
     //vertex.position = sf::Vector2f (SCREEN.width/2, SCREEN.height/2);
@@ -24,7 +24,7 @@ void Particle::Move(float XOffset, float YOffset) {
 void Particle::determineVelocity() {
     angle = atan2(MPos->y - vertex.position.y, MPos->x - vertex.position.x);
     velocity += sf::Vector2f((std::cos(angle) * PI / 180) * speed, (std::sin(angle) * PI / 180) * speed);
-    if(abs(velocity.x) > maxSpeed)velocity.x = maxSpeed * (velocity.x/abs(velocity.x));\
+    if(abs(velocity.x) > maxSpeed)velocity.x = maxSpeed * (velocity.x/abs(velocity.x));
     if(abs(velocity.y) > maxSpeed)velocity.y = maxSpeed * (velocity.y/abs(velocity.y));
 }
 
@@ -34,6 +34,14 @@ const sf::Vertex* Particle::GetVertex() const {
 
 void Particle::updateVertex() {
    // std::cout<<angle<<std::endl;
+   /*
+   if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) maxSpeed = 1250;
+   else maxSpeed = 100000;
+    */
     determineVelocity();
    Move(velocity.x * *Pdt, velocity.y * *Pdt);
+}
+
+void Particle::SetMaxSpeed(float maxSpeed) {
+    Particle::maxSpeed = maxSpeed;
 }
