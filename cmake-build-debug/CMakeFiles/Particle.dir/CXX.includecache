@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/caleb/CLionProjects/Particle/src/Particle.cpp
+Particle.hpp
+/home/caleb/CLionProjects/Particle/src/Particle.hpp
+
+/home/caleb/CLionProjects/Particle/src/Particle.hpp
+includes.hpp
+/home/caleb/CLionProjects/Particle/src/includes.hpp
+random
+-
+ctime
+-
+cmath
+-
+
+/home/caleb/CLionProjects/Particle/src/includes.hpp
+SFML/Graphics.hpp
+-
+iostream
+-
+
