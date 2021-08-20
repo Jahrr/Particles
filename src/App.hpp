@@ -8,6 +8,7 @@
 #include "Particle.hpp"
 #include <array>
 #include <ctime>
+#include <thread>
 class App {
 
 private:
@@ -21,13 +22,16 @@ private:
 
     sf::Vector2i MousePos;
 
-    std::array<Particle*, 200000> particleArray;
+    std::array<Particle*, 300000> particleArray;
+
+
 
     void Render();
     void HandleEvents();
     void Update();
     void UpdateDT();
     void UpdateMousePosition();
+    void ThreadExperiment();
 
 public:
     App();

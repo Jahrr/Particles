@@ -12,6 +12,8 @@ App::App() : dt{0.0f}{
 
     for(auto & i : particleArray)
          i = new Particle(&MousePos, &dt);
+
+
 }
 
 App::~App() {
@@ -22,8 +24,8 @@ void App::Update() {
     while(window->isOpen()){
         UpdateDT();
         UpdateMousePosition();
-        for(auto & i : particleArray)
-            i->updateVertex();
+       // for(auto & i : particleArray)
+        //    i->updateVertex();
 
         HandleEvents();
 
@@ -64,9 +66,20 @@ void App::UpdateDT() {
 }
 
 void App::Run() {
+    std::thread thr(&App::ThreadExperiment, this);
+
     Update();
+    thr.join();
+
 }
 
 void App::UpdateMousePosition() {
     MousePos = sf::Mouse::getPosition(*window);
+}
+
+void App::ThreadExperiment() {
+    while(window->isOpen()){
+        for(auto & i : particleArray)
+            i->updateVertex();
+    }
 }

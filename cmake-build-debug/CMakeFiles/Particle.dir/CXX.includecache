@@ -19,6 +19,8 @@ array
 -
 ctime
 -
+thread
+-
 
 /home/caleb/CLionProjects/Particle/src/Particle.hpp
 includes.hpp
@@ -35,10 +37,4 @@ SFML/Graphics.hpp
 -
 iostream
 -
-
-/home/caleb/CLionProjects/Particle/src/main.cpp
-iostream
--
-App.hpp
-/home/caleb/CLionProjects/Particle/src/App.hpp
 
